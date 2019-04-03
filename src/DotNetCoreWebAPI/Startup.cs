@@ -1,4 +1,6 @@
 ﻿using DotNetCoreWebApi.DbContexts;
+using DotNetCoreWebApi.Model;
+using DotNetCoreWebAPI.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -22,6 +24,7 @@ namespace DotNetCoreWebAPI
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddDbContext<MeasurementContext>(options => options.UseSqlServer(Configuration["ConnectionString:LabDb"]));
+            services.AddScoped<IMeasurementRepository<Measurement>, MeasurementRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
