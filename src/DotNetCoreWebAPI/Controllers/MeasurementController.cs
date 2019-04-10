@@ -28,6 +28,10 @@ namespace DotNetCoreWebAPI.Controllers
         public async Task<IActionResult> Get(long id)
         {
             var measurement = await _measurementRepository.Get(id);
+            if(measurement == null)
+            {
+                return NotFound("The measurement record couldn't be found");
+            }
 
             return Ok(measurement);
         }
@@ -44,6 +48,10 @@ namespace DotNetCoreWebAPI.Controllers
         public async Task<IActionResult> Update(long id, Measurement measurement)
         {
             var measurementToUpdate = await _measurementRepository.Get(id);
+            if (measurementToUpdate == null)
+            {
+                return NotFound("The measurement record couldn't be found");
+            }
             await _measurementRepository.Update(measurementToUpdate, measurement);
 
             return NoContent();
