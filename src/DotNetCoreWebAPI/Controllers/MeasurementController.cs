@@ -39,6 +39,10 @@ namespace DotNetCoreWebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(Measurement measurement)
         {
+            if (measurement == null)
+            {
+                return BadRequest("The measurement is null");
+            }
             await _measurementRepository.Add(measurement);
 
             return CreatedAtAction(nameof(Get), new { id = measurement.Id }, measurement);
