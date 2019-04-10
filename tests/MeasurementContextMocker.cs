@@ -7,7 +7,7 @@ namespace DotNetCoreWebAPI.UnitTests
 {
     public static class MeasurementContextMocker
     {
-        public static IMeasurementRepository<Measurement> GetInMemoryRepository(string dbName)
+        public static IMeasurementRepository<Measurement> GetInMemoryMeasurementsRepository(string dbName)
         {
             var options = new DbContextOptionsBuilder<MeasurementContext>()
                 .UseInMemoryDatabase(databaseName: dbName)
