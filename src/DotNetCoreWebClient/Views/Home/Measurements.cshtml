@@ -19,7 +19,7 @@
     </div>
 </form>
 
-<div class="container">
+<div class="container" id="measurements_container">
     <div class="row bg-light">
         <div class="col-sm">
             Id
@@ -37,24 +37,18 @@
             <!-- Empty column for remove button -->
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm">
-            1st column
-        </div>
-        <div class="col-sm">
-            2nd column
-        </div>
-        <div class="col-sm">
-            3rd column
-        </div>
-        <div class="col-sm">
-            4th column
-        </div>
+    <div class="row d-none">
+        <div class="col-sm" data-column-type="id"></div>
+        <div class="col-sm" data-column-type="name"></div>
+        <div class="col-sm" data-column-type="value"></div>
+        <div class="col-sm" data-column-type="createdBy"></div>
         <div class="col-sm">
             <a href="#">Remove</a>
         </div>
     </div>
 </div>
 
-<script src="~/js/new-measurement-section.js"></script>
-<script src="~/js/measurement-controller.js"></script>
+<script src="~/js/new-measurement-section.js" asp-append-version="true"></script>
+<script src="~/js/measurement-controller.js" asp-append-version="true"></script>
+<script src="~/js/measurement-list-section.js" asp-append-version="true"></script>
+

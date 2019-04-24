@@ -10,6 +10,8 @@
                 name: nameInput.value,
                 value: valueInput.value
             }
+            nameInput.value = ''
+            valueInput.value = ''
 
             this._raiseNewMeasurementAdded(obj)
         })
